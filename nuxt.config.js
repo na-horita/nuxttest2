@@ -64,8 +64,10 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-
+    extend(config) {
+      config.performance = config.performance || {}
+      config.performance.maxEntrypointSize = 1200 * 1024
+      config.performance.maxAssetSize = 700 * 1024
     }
   },
   router: {
